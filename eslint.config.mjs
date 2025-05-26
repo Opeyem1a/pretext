@@ -9,6 +9,6 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     {
-        ignores: ['node_modules/*', '**/.*', "tailwind.config.js"],
+        ignores: ['node_modules/*', '**/.*', "tailwind.config.js", "dist/*"],
     },
 ];

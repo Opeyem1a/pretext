@@ -13,21 +13,12 @@
     "background": {
         "scripts": ["background/background.js"]
     },
-    "permissions": [
-        "storage",
-        "scripting"
-    ],
+    "permissions": ["storage", "scripting"],
     "content_scripts": [
         {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content/ui.js"
-            ],
-            "css": [
-                "content/main.css"
-            ]
+            "matches": ["<all_urls>"],
+            "js": ["content/ui.js"],
+            "css": ["content/main.css"]
         }
     ],
     "browser_specific_settings": {

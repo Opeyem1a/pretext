@@ -1,5 +1,9 @@
 import { build } from 'vite';
-import {webextConfig, STANDALONE_SCRIPT_CONFIGS, STANDALONE_CSS_CONFIGS} from '../vite.build.config';
+import {
+    webextConfig,
+    STANDALONE_SCRIPT_CONFIGS,
+    STANDALONE_CSS_CONFIGS,
+} from '../vite.build.config';
 
 (async function main() {
     // It's important that this runs first, since it's the only build config that deletes /dist before running

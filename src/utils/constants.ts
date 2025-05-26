@@ -1,3 +1,3 @@
-const HELLO_WORLD = "hello-world";
+const HELLO_WORLD = 'hello-world';
 
-export { HELLO_WORLD }
+export { HELLO_WORLD };
