@@ -1,13 +1,15 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Content } from './App';
-import './styles.css';
 
 const root = document.createElement('div');
-root.id = 'specific';
+root.id = 'root';
+
+const shadow = root.attachShadow({ mode: 'open' });
+
 document.body.appendChild(root);
 
-createRoot(root).render(
+createRoot(shadow).render(
     <StrictMode>
         <Content />
     </StrictMode>
