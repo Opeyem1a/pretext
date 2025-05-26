@@ -1,4 +1,4 @@
-name: Build & lint
+name: Build, lint & test
 
 on:
   push:
@@ -25,3 +25,5 @@ jobs:
         run: yarn build:chrome
       - name: Lint
         run: yarn lint
+      - name: Test
+        run: yarn test
