@@ -1,4 +1,4 @@
-import {defineConfig, UserConfig} from 'vite';
+import { defineConfig, UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
@@ -8,23 +8,23 @@ import {
     STANDALONE_CSS_CONFIG_DEFS,
     STANDALONE_SCRIPT_CONFIG_DEFS,
     StandaloneCssConfig,
-    StandaloneIIFEScriptConfig
-} from "./vite.defs.config";
+    StandaloneIIFEScriptConfig,
+} from './vite.defs.config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const publicDir = process.env.BROWSER === "firefox" ? "public/firefox" : "public/chrome";
+const publicDir =
+    process.env.BROWSER === 'firefox' ? 'public/firefox' : 'public/chrome';
 
 const shared = {
     plugins: [react()],
 };
 
-function defineConfigContentScriptEntry(name: string, {
-    target,
-    outDir,
-    entryFileNames
-}: StandaloneIIFEScriptConfig): UserConfig {
+function defineConfigContentScriptEntry(
+    name: string,
+    { target, outDir, entryFileNames }: StandaloneIIFEScriptConfig
+): UserConfig {
     return defineConfig({
         ...shared,
         publicDir: false, // prevents Vite from copying /public
@@ -40,14 +40,13 @@ function defineConfigContentScriptEntry(name: string, {
             },
             emptyOutDir: false, // Don't delete previously built files
         },
-    })
+    });
 }
 
-function defineConfigContentCssEntry(name: string, {
-    target,
-    outDir,
-    assetFileNames
-}: StandaloneCssConfig): UserConfig {
+function defineConfigContentCssEntry(
+    name: string,
+    { target, outDir, assetFileNames }: StandaloneCssConfig
+): UserConfig {
     return defineConfig({
         ...shared,
         publicDir: false, // prevents Vite from copying /public
@@ -61,7 +60,7 @@ function defineConfigContentCssEntry(name: string, {
             },
             emptyOutDir: false, // Don't delete previously built files
         },
-    })
+    });
 }
 
 // Shared popup/options/background build
@@ -83,12 +82,12 @@ const webextConfig = defineConfig({
     },
 });
 
-const STANDALONE_SCRIPT_CONFIGS = Object.entries(STANDALONE_SCRIPT_CONFIG_DEFS).map(([name, config]) => (
-    defineConfigContentScriptEntry(name, config)
-));
+const STANDALONE_SCRIPT_CONFIGS = Object.entries(
+    STANDALONE_SCRIPT_CONFIG_DEFS
+).map(([name, config]) => defineConfigContentScriptEntry(name, config));
 
-const STANDALONE_CSS_CONFIGS = Object.entries(STANDALONE_CSS_CONFIG_DEFS).map(([name, config]) => (
-    defineConfigContentCssEntry(name, config)
-));
+const STANDALONE_CSS_CONFIGS = Object.entries(STANDALONE_CSS_CONFIG_DEFS).map(
+    ([name, config]) => defineConfigContentCssEntry(name, config)
+);
 
-export { webextConfig, STANDALONE_SCRIPT_CONFIGS, STANDALONE_CSS_CONFIGS }
+export { webextConfig, STANDALONE_SCRIPT_CONFIGS, STANDALONE_CSS_CONFIGS };

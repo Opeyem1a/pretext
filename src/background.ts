@@ -1,3 +1,3 @@
-import {logHelloWorld} from "./utils/helpers";
+import { logHelloWorld } from './utils/helpers';
 
 logHelloWorld();

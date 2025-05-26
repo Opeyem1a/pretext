@@ -1,7 +1,7 @@
-import { HELLO_WORLD } from "./constants";
+import { HELLO_WORLD } from './constants';
 
 function logHelloWorld() {
-    console.log(HELLO_WORLD)
+    console.log(HELLO_WORLD);
 }
 
-export { logHelloWorld }
+export { logHelloWorld };
