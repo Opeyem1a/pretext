@@ -2,5 +2,4 @@
 .prettierrc
 .prettierignore
 tailwind.config.ts
-eslint.config.mjs
 .github
