@@ -15,9 +15,9 @@ const STANDALONE_SCRIPT_CONFIG_DEFS: Record<
     StandaloneIIFEScriptConfig
 > = {
     ui: {
-        target: 'src/content/ui/index.tsx',
+        target: 'src/content/main/main.ts',
         outDir: 'dist/content',
-        entryFileNames: 'ui.js',
+        entryFileNames: 'main.js',
     },
     background: {
         target: 'src/background.ts',
