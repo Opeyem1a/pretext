@@ -5,6 +5,7 @@ import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import {
+    BASE_DIST_DIR,
     STANDALONE_CSS_CONFIG_DEFS,
     STANDALONE_SCRIPT_CONFIG_DEFS,
     StandaloneCssConfig,
@@ -68,7 +69,7 @@ const webextConfig = defineConfig({
     ...shared,
     publicDir,
     build: {
-        outDir: 'dist',
+        outDir: BASE_DIST_DIR,
         rollupOptions: {
             input: {
                 popup: resolve(__dirname, 'src/popup/popup.html'),
