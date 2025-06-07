@@ -64,5 +64,7 @@ function checkNamedFilesExist(manifestPath: string) {
 }
 
 const manifestPath =
-    process.env.BROWSER === 'firefox' ? 'dist/firefox/manifest.json' : 'dist/chrome/manifest.json';
+    process.env.BROWSER === 'firefox'
+        ? 'dist/firefox/manifest.json'
+        : 'dist/chrome/manifest.json';
 checkNamedFilesExist(manifestPath);
