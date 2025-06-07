@@ -11,6 +11,7 @@
         "check:chrome": "BROWSER=chrome tsx scripts/validate-manifest.ts",
         "build:firefox": "BROWSER=firefox tsx scripts/build.ts && yarn check:firefox",
         "build:chrome": "BROWSER=chrome tsx scripts/build.ts && yarn check:chrome",
+        "build": "yarn build:firefox && yarn build:chrome",
         "lint": "tsc && eslint && yarn prettier . --check",
         "fix": "yarn prettier . --write",
         "test": "vitest"
